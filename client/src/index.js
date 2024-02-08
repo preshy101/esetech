@@ -4,12 +4,27 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import 'bootstrap/dist/css/bootstrap.css'; 
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
+import Experience from "./pages/Experience";
  
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <App />,
+  },
+  {
+    path: "experience",
+    element: <Experience />,
+  },
+]);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <App />
+    <RouterProvider router={router} />
   </React.StrictMode>
 );
 
